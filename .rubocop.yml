@@ -2,12 +2,20 @@ AllCops:
   NewCops: enable
   Exclude:
     - "db/**/*"
-    - "bin/*" 
+    - "bin/*"
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+  AutoCorrect: true
+  SuggestExtensions: false
 
+
+Layout/EndOfLine:
+  AutoCorrect: true
+
+Style/IndentationWidth:
+  AutoCorrect: true
   DisplayCopNames: true
 
 Layout/LineLength:

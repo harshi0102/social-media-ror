@@ -6,8 +6,9 @@ class User < ApplicationRecord
   # Additional fields for user profile
   validates :name, presence: true
   validates :bio, length: { maximum: 500 }
-  validates :website, format: { with: URI::DEFAULT_PARSER.make_regexp, message: "Invalid URL format" }, allow_blank: true
-  validates :gender, inclusion: { in: ['male', 'female', 'other'], allow_blank: true }
+  validates :website, format: { with: URI::DEFAULT_PARSER.make_regexp, message: 'Invalid URL format' },
+                      allow_blank: true
+  validates :gender, inclusion: { in: %w[male female other], allow_blank: true }
 
   # Devise modules for authentication
   devise :database_authenticatable, :registerable,
