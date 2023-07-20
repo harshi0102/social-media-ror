@@ -1,0 +1,12 @@
+<h1>Newsfeed</h1>
+
+<% @newsfeed_posts.each do |post| %>
+  <div>
+    <strong><%= post.user.name %>:</strong>
+    <%= post.content %>
+    <%# Display post image if present %>
+    <% if post.image.attached? %>
+      <%= image_tag post.image %>
+    <% end %>
+  </div>
+<% end %>
